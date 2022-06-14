@@ -10,6 +10,7 @@ const HeadProvider: FC = ({ children }) => {
 	return (
 		<>
 			<NextProgressBar
+				options={{ showSpinner: false }}
 				color={accentColor}
 				startPosition={0.3}
 				stopDelayMs={200}

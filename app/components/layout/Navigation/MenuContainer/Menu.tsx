@@ -13,7 +13,7 @@ const Menu: FC<{ menu: IMenu }> = ({ menu: { items, title } }) => {
 				{items.map((item) => (
 					<MenuItem item={item} key={item.link} />
 				))}
-				{title === 'general' && <AuthItems />}
+				{title === 'General' && <AuthItems />}
 			</ul>
 		</div>
 	)

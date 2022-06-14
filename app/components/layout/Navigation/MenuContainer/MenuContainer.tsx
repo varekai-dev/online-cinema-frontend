@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import Menu from './Menu'
+import AuthItems from './auth/AuthItems'
 import GenreMenu from './genres/GenreMenu'
 import { firstMenu, userMenu } from './menu.data'
 
