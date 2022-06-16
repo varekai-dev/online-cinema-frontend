@@ -1,5 +1,3 @@
-import { FC } from 'react'
-
 import UserList from '@/components/screens/admin/users/UserList'
 
 import { NextPageAuth } from '@/shared/types/auth.types'
