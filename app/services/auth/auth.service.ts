@@ -31,6 +31,9 @@ export const AuthService = {
 				password,
 			}
 		)
+		if (response.data.accessToken) {
+			saveToStorage(response.data)
+		}
 
 		return response
 	},
