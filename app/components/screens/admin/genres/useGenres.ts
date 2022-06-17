@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { ChangeEvent, useMemo, useState } from 'react'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
@@ -36,7 +37,7 @@ export const useGenres = () => {
 
 	const { mutateAsync: deleteAsync } = useMutation(
 		'delete genre',
-		(genreId: string) => GenreService.deleteGenre(genreId),
+		(genreId: string) => GenreService.delete(genreId),
 		{
 			onError: (error) => toastError(error, 'Delete genre'),
 			onSuccess: () => {
@@ -49,6 +50,18 @@ export const useGenres = () => {
 	const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
 		setSearchTerm(e.target.value)
 	}
+	const { push } = useRouter()
+	const { mutateAsync: createAsync } = useMutation(
+		'Create genre',
+		() => GenreService.create(),
+		{
+			onError: (error) => toastError(error, 'Create genre'),
+			onSuccess: ({ data: _id }) => {
+				toastr.success('Create genre', 'create was successful')
+				push(getAdminUrl(`genre/edit/${_id}`))
+			},
+		}
+	)
 
 	return useMemo(
 		() => ({
@@ -56,7 +69,8 @@ export const useGenres = () => {
 			...queryData,
 			searchTerm,
 			deleteAsync,
+			createAsync,
 		}),
-		[queryData, searchTerm, deleteAsync]
+		[queryData, searchTerm, deleteAsync, createAsync]
 	)
 }

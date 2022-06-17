@@ -1,7 +1,7 @@
 {
 	"name": "online-cinema-frontend",
 	"version": "0.1.0",
-	"description": "Cinema application for premium intensive in htmllessons.ru",
+	"description": "Cinema application",
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
@@ -57,6 +57,7 @@
 		"eslint-config-next": "12.0.8",
 		"postcss": "^8.4.5",
 		"prettier": "^2.5.1",
+		"tailwind-scrollbar": "^1.3.1",
 		"tailwindcss": "^3.0.15",
 		"typescript": "4.5.5"
 	}

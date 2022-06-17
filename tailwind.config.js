@@ -77,6 +77,7 @@ module.exports = {
 		},
 	},
 	plugins: [
+		require('tailwind-scrollbar'),
 		require('@tailwindcss/forms'),
 		require('@tailwindcss/aspect-ratio'),
 		plugin(({ addComponents, theme, addUtilities }) => {

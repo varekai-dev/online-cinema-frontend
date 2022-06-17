@@ -1,3 +1,4 @@
+import cn from 'classnames'
 import { FC } from 'react'
 
 import Logo from './Logo'
@@ -6,7 +7,12 @@ import styles from './Navigation.module.scss'
 
 const Navigation: FC = () => {
 	return (
-		<div className={styles.navigation}>
+		<div
+			className={cn(
+				styles.navigation,
+				'scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100'
+			)}
+		>
 			<Logo />
 			<MenuContainer />
 		</div>
