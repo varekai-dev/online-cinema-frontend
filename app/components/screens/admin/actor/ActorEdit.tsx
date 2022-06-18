@@ -1,7 +1,6 @@
 import dynamic from 'next/dynamic'
 import { FC } from 'react'
 import { Controller, useForm } from 'react-hook-form'
-import { stripHtml } from 'string-strip-html'
 
 import Button from '@/components/ui/form-elements/Button'
 import SlugField from '@/components/ui/form-elements/SlugField/SlugField'

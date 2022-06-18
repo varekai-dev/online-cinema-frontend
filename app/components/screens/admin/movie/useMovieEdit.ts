@@ -16,11 +16,11 @@ import { IMovieEditInput } from './movie-edit.interface'
 export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 	const { push, query } = useRouter()
 
-	const genreId = String(query.id)
+	const movieId = String(query.id)
 
 	const { isLoading } = useQuery(
-		['movie', genreId],
-		() => MovieService.getById(genreId),
+		['movie', movieId],
+		() => MovieService.getById(movieId),
 		{
 			onSuccess: ({ data }) => {
 				getKeys(data).forEach((key) => setValue(key, data[key]))
@@ -33,11 +33,11 @@ export const useMovieEdit = (setValue: UseFormSetValue<IMovieEditInput>) => {
 	)
 	const { mutateAsync } = useMutation(
 		'update movie',
-		(data: IMovieEditInput) => MovieService.update(genreId, data),
+		(data: IMovieEditInput) => MovieService.update(movieId, data),
 		{
 			onSuccess: () => {
 				toastr.success('Update movie', 'update was successful')
-				push(getAdminUrl('genres'))
+				push(getAdminUrl('movies'))
 			},
 			onError: (error) => {
 				toastError(error, 'Update movie')

@@ -1,5 +1,6 @@
 import { FC } from 'react'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { Provider } from 'react-redux'
 
 import Layout from '@/components/layout/Layout'
@@ -27,6 +28,7 @@ const MainProvider: FC<TypeComponentAuthFields> = ({ children, Component }) => {
 		<HeadProvider>
 			<Provider store={store}>
 				<QueryClientProvider client={queryClient}>
+					<ReactQueryDevtools initialIsOpen={false} />
 					<ReduxToast />
 					<AuthProvider Component={Component}>
 						<Layout>{children}</Layout>
