@@ -72,6 +72,7 @@ const ActorEdit: FC = () => {
 								control={control}
 								name="photo"
 								defaultValue=""
+								rules={{ required: 'Photo is required' }}
 								render={({
 									field: { value, onChange },
 									fieldState: { error },

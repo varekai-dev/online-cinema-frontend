@@ -1,7 +1,7 @@
 import cn from 'classnames'
 import { FC } from 'react'
 
-import Search from '../../../../Search/Search'
+import Search from './Search/Search'
 
 import MoviesContainer from './MoviesContainer/MoviesContainer'
 import styles from './Sidebar.module.scss'

@@ -85,7 +85,6 @@ const GenreEdit: FC = () => {
 									field: { value, onChange },
 									fieldState: { error },
 								}) => (
-									//@ts-ignore
 									<DynamicTextEditor
 										placeholder="Description"
 										onChange={onChange}

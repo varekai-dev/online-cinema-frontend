@@ -52,7 +52,7 @@
 		"@types/react-select": "^5.0.1",
 		"@types/react-star-rating-component": "^1.4.1",
 		"@types/react-transition-group": "^4.4.4",
-		"autoprefixer": "10.4.5",
+		"autoprefixer": "^10.4.2",
 		"eslint": "8.7.0",
 		"eslint-config-next": "12.0.8",
 		"postcss": "^8.4.5",

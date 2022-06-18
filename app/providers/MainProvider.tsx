@@ -13,10 +13,11 @@ import ReduxToast from '../components/ui/redux-toastr/reduxToast'
 import AuthProvider from './AuthProvider/AuthProvider'
 import HeadProvider from './HeadProvider/HeadProvider'
 
-const queryClient = new QueryClient({
+export const queryClient = new QueryClient({
 	defaultOptions: {
 		queries: {
 			refetchOnWindowFocus: false,
+			staleTime: Infinity,
 		},
 	},
 })
