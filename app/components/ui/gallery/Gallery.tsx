@@ -8,8 +8,9 @@ import { IGalleryItem } from './gallery.interface'
 
 const Gallery: FC<{ items: IGalleryItem[] }> = ({ items }) => {
 	const { elRef } = useHorizontalScroll()
+	const props = items.length > 4 ? { ref: elRef } : {}
 	return (
-		<div className={styles.gallery} ref={elRef}>
+		<div className={styles.gallery} {...props}>
 			{items.map((item) => (
 				<GalleryItem item={item} key={item.link} variant="vertical" />
 			))}

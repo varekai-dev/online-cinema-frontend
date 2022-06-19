@@ -21,12 +21,12 @@ const Home: FC<IHome> = ({ slides, trendingMovies, actors }) => {
 				className="text-gray-300 mb-8 text-xl"
 			/>
 			{slides.length && <Slider slides={slides} />}
-			<div>
+			<div className="mt-5">
 				<SubHeading title="Trending now" />
 				{trendingMovies.length && <Gallery items={trendingMovies} />}
 			</div>
 
-			<div>
+			<div className="mt-5">
 				<SubHeading title="Best Actors" />
 				{actors.length && <Gallery items={actors} />}
 			</div>

@@ -49,7 +49,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		const dataTrendingMovies = await MovieService.getMostPopularMovies()
 
 		const trendingMovies = dataTrendingMovies.slice(0, 7).map((movie) => ({
-			link: getMovieUrl(movie._id),
+			link: getMovieUrl(movie.slug),
 			name: movie.title,
 			posterPath: movie.poster,
 		}))
