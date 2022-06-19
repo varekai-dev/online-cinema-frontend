@@ -28,7 +28,7 @@ const MainProvider: FC<TypeComponentAuthFields> = ({ children, Component }) => {
 		<HeadProvider>
 			<Provider store={store}>
 				<QueryClientProvider client={queryClient}>
-					<ReactQueryDevtools initialIsOpen={false} />
+					{/* <ReactQueryDevtools initialIsOpen={false} /> */}
 					<ReduxToast />
 					<AuthProvider Component={Component}>
 						<Layout>{children}</Layout>

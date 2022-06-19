@@ -25,6 +25,12 @@ import { useMovieEdit } from './useMovieEdit'
 const DynamicSelect = dynamic(() => import('@/components/ui/select/Select'), {
 	ssr: false,
 })
+const DynamicTextEditor = dynamic(
+	() => import('@/ui/form-elements/TextEditor'),
+	{
+		ssr: false,
+	}
+)
 
 const MovieEdit: FC = () => {
 	const {
@@ -124,6 +130,32 @@ const MovieEdit: FC = () => {
 									/>
 								)}
 							/>
+							<div style={{ width: '100%' }}>
+								<Controller
+									name="description"
+									control={control}
+									defaultValue=""
+									render={({
+										field: { value, onChange },
+										fieldState: { error },
+									}) => (
+										<DynamicTextEditor
+											placeholder="Description"
+											onChange={onChange}
+											error={error}
+											value={value}
+										/>
+									)}
+									rules={{
+										validate: {
+											required: (v) =>
+												(v && stripHtml(v).result.length > 0) ||
+												'Description is required!',
+										},
+									}}
+								/>
+							</div>
+
 							<Controller
 								control={control}
 								name="poster"
