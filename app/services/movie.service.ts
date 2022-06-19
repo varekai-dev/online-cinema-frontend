@@ -21,6 +21,16 @@ export const MovieService = {
 	async getById(_id: string) {
 		return axios.get<IMovieEditInput>(getMoviesUrl(`/${_id}`))
 	},
+
+	async getByGenres(genreIds: string[]) {
+		return axiosClassic.post<IMovie[]>(getMoviesUrl('/by-genres/'), {
+			genreIds,
+		})
+	},
+
+	async getByActor(actorId: string) {
+		return axiosClassic.get<IMovie[]>(getMoviesUrl(`/by-actor/${actorId}`))
+	},
 	async getMostPopularMovies() {
 		const { data: movies } = await axiosClassic.get<IMovie[]>(
 			getMoviesUrl('/most-popular')

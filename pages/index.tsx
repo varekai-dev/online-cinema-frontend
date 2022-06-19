@@ -10,7 +10,8 @@ import { MovieService } from '@/services/movie.service'
 
 import { getGenresList } from '@/utils/movie/getGenresListEach'
 
-import { getActorsUrl, getMoviesUrl } from '@/configs/api.config'
+import { getMoviesUrl } from '@/configs/api.config'
+import { getActorUrl, getMovieUrl } from '@/configs/url.config'
 
 const HomePage: NextPage<IHome> = ({ slides, trendingMovies, actors }) => {
 	return (
@@ -36,7 +37,7 @@ export const getStaticProps: GetStaticProps = async () => {
 			.sort((b, a) => a.countMovies - b.countMovies)
 			.slice(0, 7)
 			.map((actor) => ({
-				link: getActorsUrl(actor.slug),
+				link: getActorUrl(actor.slug),
 				name: actor.name,
 				posterPath: actor.photo,
 				content: {
@@ -48,7 +49,7 @@ export const getStaticProps: GetStaticProps = async () => {
 		const dataTrendingMovies = await MovieService.getMostPopularMovies()
 
 		const trendingMovies = dataTrendingMovies.slice(0, 7).map((movie) => ({
-			link: getMoviesUrl(movie._id),
+			link: getMovieUrl(movie._id),
 			name: movie.title,
 			posterPath: movie.poster,
 		}))
