@@ -31,18 +31,26 @@ export const MovieService = {
 	async getByActor(actorId: string) {
 		return axiosClassic.get<IMovie[]>(getMoviesUrl(`/by-actor/${actorId}`))
 	},
+
+	async getBySlug(slug: string) {
+		return axiosClassic.get<IMovie>(getMoviesUrl(`/by-slug/${slug}`))
+	},
+
 	async getMostPopularMovies() {
 		const { data: movies } = await axiosClassic.get<IMovie[]>(
 			getMoviesUrl('/most-popular')
 		)
 		return movies
 	},
+
 	async delete(_id: string) {
 		return axios.delete<string>(getMoviesUrl(`/${_id}`))
 	},
+
 	async create() {
 		return axios.post<string>(getMoviesUrl(''))
 	},
+
 	async update(_id: string, data: IMovieEditInput) {
 		return axios.put<string>(getMoviesUrl(`/${_id}`), data)
 	},

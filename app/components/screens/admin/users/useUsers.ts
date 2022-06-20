@@ -22,15 +22,17 @@ export const useUsers = () => {
 		() => UserService.getAll(debouncedSearch),
 		{
 			select: ({ data }) =>
-				data
-					.filter((user) => !user.isAdmin)
-					.map(
-						(user): ITableItem => ({
-							_id: user._id,
-							editUrl: getAdminUrl(`user/edit/${user._id}`),
-							items: [user.email, convertMongoDate(user.createdAt)],
-						})
-					),
+				data.map(
+					(user): ITableItem => ({
+						_id: user._id,
+						editUrl: getAdminUrl(`user/edit/${user._id}`),
+						items: [
+							user.email,
+							convertMongoDate(user.createdAt),
+							user.isAdmin ? 'Admin' : 'User',
+						],
+					})
+				),
 
 			onError: (error) => toastError(error, 'User list'),
 		}

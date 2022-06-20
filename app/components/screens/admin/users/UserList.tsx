@@ -20,7 +20,7 @@ const UserList: FC = () => {
 			<AdminTable
 				isLoading={isLoading}
 				removeHandler={deleteAsync}
-				headerItems={['Email', 'Date register']}
+				headerItems={['Email', 'Date register', 'Role']}
 				tableItems={data || []}
 			/>
 		</Meta>

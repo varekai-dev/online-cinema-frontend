@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from 'next'
 
-import Catalog from '@/components/ui/catalog-movies/Catalog'
+import Catalog from '@/components/screens/catalog-movies/Catalog'
 
 import { IMovie } from '@/shared/types/movie.types'
 
