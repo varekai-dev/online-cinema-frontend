@@ -7,6 +7,7 @@ import { IMovie } from '@/shared/types/movie.types'
 import { getMoviesUrl } from '@/configs/api.config'
 
 import { axiosClassic } from './../api/interceptors'
+import { useUpdateCountOpened } from './../components/screens/single-movie/useUpdateCountOpened'
 
 export const MovieService = {
 	async getAll(searchTerm?: string) {
@@ -53,5 +54,11 @@ export const MovieService = {
 
 	async update(_id: string, data: IMovieEditInput) {
 		return axios.put<string>(getMoviesUrl(`/${_id}`), data)
+	},
+
+	async updateCountOpened(slug: string) {
+		return axiosClassic.put<string>(getMoviesUrl('/update-count-opened'), {
+			slug,
+		})
 	},
 }

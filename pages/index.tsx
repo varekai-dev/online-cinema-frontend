@@ -10,7 +10,6 @@ import { MovieService } from '@/services/movie.service'
 
 import { getGenresList } from '@/utils/movie/getGenresListEach'
 
-import { getMoviesUrl } from '@/configs/api.config'
 import { getActorUrl, getMovieUrl } from '@/configs/url.config'
 
 const HomePage: NextPage<IHome> = ({ slides, trendingMovies, actors }) => {
@@ -27,7 +26,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
 		const slides: ISlide[] = movies.slice(0, 3).map((m) => ({
 			_id: m._id,
-			link: getMoviesUrl(m.slug),
+			link: getMovieUrl(m.slug),
 			bigPoster: m.bigPoster,
 			subTitle: getGenresList(m.genres),
 			title: m.title,

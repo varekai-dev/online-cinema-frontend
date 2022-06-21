@@ -3,10 +3,7 @@ import { SubmitHandler, UseFormSetValue } from 'react-hook-form'
 import { useMutation, useQuery } from 'react-query'
 import { toastr } from 'react-redux-toastr'
 
-import { GenreService } from '@/services/genre.service'
 import { UserService } from '@/services/user.service'
-
-import { getKeys } from '@/utils/object/getKeys'
 
 import { getAdminUrl } from '@/configs/url.config'
 

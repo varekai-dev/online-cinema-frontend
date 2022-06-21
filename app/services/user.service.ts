@@ -4,7 +4,7 @@ import { IProfileInput } from '@/components/screens/profile/profile.interface'
 
 import { IUser } from '@/shared/types/user.types'
 
-import { getGenresUrl, getUsersUrl } from '@/configs/api.config'
+import { getUsersUrl } from '@/configs/api.config'
 
 export const UserService = {
 	async getAll(searchTerm?: string) {
