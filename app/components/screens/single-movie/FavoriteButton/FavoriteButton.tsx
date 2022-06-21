@@ -10,7 +10,6 @@ import { toastError } from '@/utils/toast-error'
 import { useFavorites } from '../../favorites/useFavorites'
 
 import styles from './FavoriteButton.module.scss'
-import HeartImage from './heart-animation.png'
 
 const FavoriteButton: FC<{ movieId: string }> = ({ movieId }) => {
 	const [isSmashed, setIsSmashed] = useState(false)
@@ -44,7 +43,7 @@ const FavoriteButton: FC<{ movieId: string }> = ({ movieId }) => {
 				[styles.animate]: isSmashed,
 			})}
 			style={{
-				backgroundImage: `url(${HeartImage.src})`,
+				backgroundImage: `url('/heart-animation.png')`,
 				backgroundPosition: !isSmashed ? 'left' : '',
 			}}
 		/>

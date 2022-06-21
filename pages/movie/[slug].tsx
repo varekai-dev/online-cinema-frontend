@@ -1,12 +1,10 @@
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 
-import Catalog from '@/components/screens/catalog-movies/Catalog'
 import SingleMovie from '@/components/screens/single-movie/SingleMovie'
 import { IGalleryItem } from '@/components/ui/gallery/gallery.interface'
 
 import { IMovie } from '@/shared/types/movie.types'
 
-import { ActorService } from '@/services/actor.service'
 import { MovieService } from '@/services/movie.service'
 
 import { getMovieUrl } from '@/configs/url.config'
@@ -65,6 +63,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 				movie,
 				similarMovies,
 			},
+			revalidate: 60,
 		}
 	} catch (error) {
 		return {

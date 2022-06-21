@@ -21,7 +21,7 @@ const AuthProvider: FC<TypeComponentAuthFields> = ({
 
 	useEffect(() => {
 		const accessToken = Cookies.get('accessToken')
-		if (!accessToken) checkAuth()
+		if (!accessToken && !!user) checkAuth()
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 

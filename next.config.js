@@ -4,6 +4,7 @@ const nextConfig = {
 		domains: ['res.cloudinary.com', 'upload.wikimedia.org'],
 	},
 	poweredByHeader: false,
+	optimizeFonts: false,
 	env: {
 		APP_URL: process.env.REACT_APP_URL,
 		APP_ENV: process.env.REACT_APP_ENV,
