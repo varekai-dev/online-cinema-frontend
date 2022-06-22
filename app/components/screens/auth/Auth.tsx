@@ -1,4 +1,5 @@
-import { FC, useState } from 'react'
+import { useRouter } from 'next/router'
+import { FC, useEffect, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import Button from '@/components/ui/form-elements/Button'
@@ -13,9 +14,11 @@ import styles from './Auth.module.scss'
 import AuthFields from './AuthFields'
 import { IAuthInput } from './auth.interface'
 import { useAuthRedirect } from './useAuthRedirect'
+import { useAuthVerification } from './useAuthVerification'
 
 const Auth: FC = () => {
 	useAuthRedirect()
+	useAuthVerification()
 
 	const { isLoading } = useAuth()
 	const [type, setType] = useState<'login' | 'register'>('login')
