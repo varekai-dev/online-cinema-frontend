@@ -3,6 +3,7 @@ import { IUser } from '@/shared/types/user.types'
 export interface IUserState {
 	email: string
 	isAdmin: boolean
+	_id: string
 }
 
 export interface ITokens {

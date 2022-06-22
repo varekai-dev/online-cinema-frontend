@@ -1,0 +1,64 @@
+.comments {
+	max-width: 700px;
+	margin: 0 auto;
+	.heading {
+		@apply mb-2 text-2xl text-gray-300;
+	}
+}
+.comment {
+	@apply flex text-white  mb-10 border-t-2 border-t-gray-700 pt-5;
+	.avatar {
+		@apply mr-4;
+		img {
+			@apply rounded-xl;
+		}
+	}
+	.wrapper {
+		@apply w-full pb-5 text-gray-500 relative;
+		.name {
+			@apply text-lg;
+		}
+		.time {
+			@apply text-sm mb-2;
+		}
+		.text {
+			@apply text-sm mb-2;
+		}
+		.reply {
+			@apply text-sm underline hover:cursor-pointer;
+		}
+	}
+}
+
+.form {
+	@apply mb-10;
+}
+
+.notAuthorized {
+	@apply text-center text-gray-500;
+}
+.buttonWrapper {
+	text-align: right;
+}
+.button {
+	@apply bg-gray-600 hover:bg-gray-500 text-gray-300 text-lg py-2 px-4 rounded;
+	margin-left: auto;
+	margin-top: 20px !important;
+}
+
+.deleteButton {
+	@apply absolute text-2xl hover:text-primary hover:cursor-pointer;
+	top: 50%;
+	transition: all 0.3s ease-in-out;
+	transform: translateY(-50%);
+	right: 20px;
+}
+
+.textArea {
+	@apply bg-gray-800 rounded-lg p-4 text-gray-500 w-full h-40;
+	resize: none;
+	&:focus {
+		@apply outline-none border-none;
+		box-shadow: none;
+	}
+}

@@ -1,7 +1,6 @@
 import { getContentType } from 'api/api.helpers'
 import { axiosClassic } from 'api/interceptors'
 import Cookies from 'js-cookie'
-import { remove } from 'lodash'
 
 import { getAuthUrl } from '@/configs/api.config'
 

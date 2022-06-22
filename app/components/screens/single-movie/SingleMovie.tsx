@@ -3,6 +3,7 @@ import { FC } from 'react'
 import ReactPlayer from 'react-player'
 
 import Banner from '@/components/ui/banner/Banner'
+import Comments from '@/components/ui/comments/Comments'
 import Gallery from '@/components/ui/gallery/Gallery'
 import SubHeading from '@/components/ui/heading/SubHeading'
 
@@ -38,6 +39,7 @@ const SingleMovie: FC<IMoviePage> = ({ movie, similarMovies }) => {
 				</div>
 			)}
 			<DynamicRateMovie slug={movie.slug} id={movie._id} />
+			<Comments movieId={movie._id} />
 		</Meta>
 	)
 }

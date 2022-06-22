@@ -20,7 +20,6 @@ const RestorePassword: FC = () => {
 		handleSubmit,
 		formState: { errors },
 		reset,
-		watch,
 	} = useForm<{ email: string }>()
 	const { isLoading, mutate } = useRestorePassword()
 
