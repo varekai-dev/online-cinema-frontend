@@ -10,6 +10,10 @@ import { IAuthResponse } from '@/store/user/user.interface'
 import { removeTokensStorage, saveToStorage } from './auth.helper'
 
 export const AuthService = {
+	async emailVerification(token: string | undefined) {
+		return await axiosClassic.get(getAuthUrl(`/verify-email?token=${token}`))
+	},
+
 	async register(email: string, password: string) {
 		const response = await axiosClassic.post<IAuthResponse>(
 			getAuthUrl('/register'),
