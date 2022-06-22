@@ -1,5 +1,5 @@
-import { useRouter } from 'next/router'
-import { FC, useEffect, useState } from 'react'
+import Link from 'next/link'
+import { FC, useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import Button from '@/components/ui/form-elements/Button'
@@ -52,6 +52,9 @@ const Auth: FC = () => {
 						register={RegisterInput}
 						isPasswordRequired
 					/>
+					<Link href="/auth/forgot-password">
+						<a className={styles.link}>Forgot password?</a>
+					</Link>
 					<div className={styles.buttons}>
 						<Button
 							type="submit"

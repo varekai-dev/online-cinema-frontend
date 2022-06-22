@@ -2,8 +2,9 @@ import { CSSProperties } from 'react'
 import { EditorProps } from 'react-draft-wysiwyg'
 import { FieldError } from 'react-hook-form'
 
-export interface IButton
-	extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+	isLoading?: boolean
+}
 
 export interface IFieldProps {
 	placeholder: string
